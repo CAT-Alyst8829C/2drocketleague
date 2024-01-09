@@ -1,7 +1,7 @@
 window.onload = init;
 
 //Constants
-var INITIAL       = 10,
+var INITIAL       = 7,
     GRAVITY       =  0,
     REBOUND_RATIO =  0.8,
     DAMPING_RATIO =  0.995;
@@ -136,6 +136,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('keydown', function(event) {
   if (event.key == "w") {
-    addForce(objects[1], 0, 10);
+    addForce(objects[1], 0, -1);
+  }
+
+  if (event.key == "s") {
+    addForce(objects[1], 0, 1);
+  }
+
+  if (event.key == "a") {
+    addForce(objects[1], -1, 0);
+  }
+
+  if (event.key == "d") {
+    addForce(objects[1], 1, 0);
   }
 })
