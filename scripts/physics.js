@@ -126,6 +126,8 @@ function update_soccer(){
       objects[0].vy = -Math.abs(objects[0].vy) * REBOUND_RATIO;
     }
 
+    collisionDetection();
+
   
 
     //Apply damping
@@ -177,8 +179,8 @@ function update_p1(){
   
 
     //Apply damping
-    objects[1].vx *= DAMPING_RATIO;
-    objects[1].vy *= DAMPING_RATIO;
+    objects[1].vx *= 0.995;
+    objects[1].vy *= 0.995;
 
     //Apply gravity
     objects[1].vy += GRAVITY;
@@ -253,52 +255,52 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener('keydown', function(event) {
       if (event.key == "w") {
         // addForce(objects[1], 0, -2.5);
-        objects[1].vy += -2.5;
+        objects[1].vy += -2;
       }
     })
     document.addEventListener('keydown', function(event) {
       if (event.key == "a") {
         // addForce(objects[1], -2.5, 0);
-        objects[1].vx += -2.5;
+        objects[1].vx += -2;
       }
     })
 
     document.addEventListener('keydown', function(event) {
       if (event.key == "s") {
         // addForce(objects[1], 0, 2.5);
-        objects[1].vy += 2.5;
+        objects[1].vy += 2;
       }
     })
 
     document.addEventListener('keydown', function(event) {
       if (event.key == "d") {
         // addForce(objects[1], 2.5, 0);
-        objects[1].vx += 2.5;
+        objects[1].vx += 2;
       }
     })
 
     //Player 2 controls
     document.addEventListener('keydown', function(event) {
       if (event.key == "ArrowUp") {
-        addForce(objects[2], 0, -2.5);
+        addForce(objects[2], 0, -2);
       }
     })
 
     document.addEventListener('keydown', function(event) {
       if (event.key == "ArrowLeft") {
-        addForce(objects[2], -2.5, 0);
+        addForce(objects[2], -2, 0);
       }
     })
 
     document.addEventListener('keydown', function(event) {
       if (event.key == "ArrowDown") {
-        addForce(objects[2], 0, 2.5);
+        addForce(objects[2], 0, 2);
       }
     })
 
     document.addEventListener('keydown', function(event) {
       if (event.key == "ArrowRight") {
-        addForce(objects[2], 2.5, 0);
+        addForce(objects[2], 2, 0);
       }
     })
   })
