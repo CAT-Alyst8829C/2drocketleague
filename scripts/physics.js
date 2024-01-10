@@ -150,4 +150,6 @@ document.addEventListener('keydown', function(event) {
   if (event.key == "d") {
     addForce(objects[1], 1, 0);
   }
+
+
 })
